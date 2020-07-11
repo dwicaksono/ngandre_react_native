@@ -6,6 +6,9 @@ import {
   TouchableOpacity,
   Platform,
 } from "react-native";
+import { HeaderButtons, Item } from "react-navigation-header-buttons";
+import HeaderButtonApps from "../components/headerButton";
+import { Ionicons } from "@expo/vector-icons";
 
 import color from "../constant/colors";
 import { CATEGORIES } from "../data/dummy-data";
@@ -21,6 +24,7 @@ const CategoriesScreen = ({ navigation }) => {
         onSelect={() =>
           navigation.navigate("CategoryMeals", { categoryId: itemData.item.id })
         }
+        image={itemData.item.color}
         color={itemData.item.color}
       />
     );
@@ -35,8 +39,21 @@ const CategoriesScreen = ({ navigation }) => {
   );
 };
 
-CategoriesScreen.navigationOptions = {
-  headerTitle: "Categories",
+CategoriesScreen.navigationOptions = (navdata) => {
+  return {
+    headerTitle: "Categories",
+    headerLeft: () => (
+      <HeaderButtons HeaderButtonComponent={HeaderButtonApps}>
+        <Item
+          title="Menu"
+          iconName="ios-menu"
+          onPress={() => {
+            navdata.navigation.toggleDrawer();
+          }}
+        />
+      </HeaderButtons>
+    ),
+  };
 };
 
 export default CategoriesScreen;

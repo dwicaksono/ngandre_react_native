@@ -2,16 +2,56 @@ import Category from "../models/category";
 import Meal from "../models/meal";
 
 export const CATEGORIES = [
-  new Category("c1", "Italian", "#f5428d"),
-  new Category("c2", "Quick & Easy", "#f54242"),
-  new Category("c3", "Hamburgers", "#f5a442"),
-  new Category("c4", "German", "#f5d142"),
-  new Category("c5", "Light & Lovely", "#368dff"),
-  new Category("c6", "Exotic", "#41d95d"),
-  new Category("c7", "Breakfast", "#9eecff"),
-  new Category("c8", "Asian", "#b9ffb0"),
-  new Category("c9", "French", "#ffc7ff"),
-  new Category("c10", "Summer", "#47fced"),
+  new Category(
+    "c1",
+    "Italian",
+    "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.cntraveler.com%2Fphotos%2F542333488614701924e124a9%2Fmaster%2Fpass%2Fitaly-food-intro-1.jpg&f=1&nofb=1"
+  ),
+  new Category(
+    "c2",
+    "Quick & Easy",
+    "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/quick-easy-dinner-recipes-1570475391.jpg"
+  ),
+  new Category(
+    "c3",
+    "Hamburgers",
+    "https://barbecuebible.com/wp-content/uploads/2013/05/featured-great-american-hamburger.jpg"
+  ),
+  new Category(
+    "c4",
+    "Japan",
+    "https://rimage.gnst.jp/livejapan.com/public/article/detail/a/00/02/a0002487/img/basic/a0002487_main.jpg"
+  ),
+  new Category(
+    "c5",
+    "Light & Lovely",
+    "https://media-cdn.tripadvisor.com/media/photo-s/12/1a/88/cc/light-of-india-restaurant.jpg"
+  ),
+  new Category(
+    "c6",
+    "Exotic",
+    "https://miro.medium.com/max/9792/0*ms25qTKJKj60ZbCI"
+  ),
+  new Category(
+    "c7",
+    "Breakfast",
+    "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fguardian.ng%2Fwp-content%2Fuploads%2F2017%2F07%2Fbreakfast.jpg&f=1&nofb=1"
+  ),
+  new Category(
+    "c8",
+    "Asian",
+    "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fsuitelife.com%2Fblog%2Fwp-content%2Fuploads%2F2015%2F08%2F327013.jpg&f=1&nofb=1"
+  ),
+  new Category(
+    "c9",
+    "French",
+    "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Furbonner.files.wordpress.com%2F2013%2F04%2Fcrepes.jpg&f=1&nofb=1"
+  ),
+  new Category(
+    "c10",
+    "Summer",
+    "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fcarlosparnellmd.com%2Fwp-content%2Fuploads%2F2017%2F06%2Fsummer-food.jpeg&f=1&nofb=1"
+  ),
 ];
 
 export const MEALS = [
