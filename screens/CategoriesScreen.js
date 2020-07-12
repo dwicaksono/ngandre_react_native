@@ -8,9 +8,7 @@ import {
 } from "react-native";
 import { HeaderButtons, Item } from "react-navigation-header-buttons";
 import HeaderButtonApps from "../components/headerButton";
-import { Ionicons } from "@expo/vector-icons";
 
-import color from "../constant/colors";
 import { CATEGORIES } from "../data/dummy-data";
 import { FlatList } from "react-native-gesture-handler";
 
