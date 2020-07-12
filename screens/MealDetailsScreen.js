@@ -1,20 +1,45 @@
 import React from "react";
-import { StyleSheet, View, Text, Button } from "react-native";
+import {
+  StyleSheet,
+  View,
+  Text,
+  Button,
+  Image,
+  ScrollView,
+} from "react-native";
 import { HeaderButtons, Item } from "react-navigation-header-buttons";
 import { MEALS } from "../data/dummy-data";
 import HeaderButtonApps from "../components/headerButton";
+import TextDefault from "../components/textDefault";
 
-const MealDetails = ({ navigation }) => {
-  const mealId = navigation.getParam("mealId");
+const ListItem = (props) => {
+  return (
+    <View style={styles.listItem}>
+      <TextDefault>{props.children}</TextDefault>
+    </View>
+  );
+};
+
+const MealDetails = (props) => {
+  const mealId = props.navigation.getParam("mealId");
   const selectedMeal = MEALS.find((meal) => meal.id === mealId);
   return (
-    <View style={styles.screen}>
-      <Text>{selectedMeal.title}</Text>
-      <Button
-        title="go back Meal Categories"
-        onPress={() => navigation.popToTop()}
-      />
-    </View>
+    <ScrollView>
+      <Image source={{ uri: selectedMeal.imageUrl }} style={styles.image} />
+      <View style={styles.details}>
+        <TextDefault>{selectedMeal.duration}m</TextDefault>
+        <TextDefault>{selectedMeal.complexity.toUpperCase()}</TextDefault>
+        <TextDefault>{selectedMeal.affordability.toUpperCase()}</TextDefault>
+      </View>
+      <Text style={styles.title}>Ingredients</Text>
+      {selectedMeal.ingredients.map((ingredient) => (
+        <ListItem key={ingredient}>{ingredient}</ListItem>
+      ))}
+      <Text style={styles.title}>Steps</Text>
+      {selectedMeal.steps.map((step) => (
+        <ListItem key={step}>{step}</ListItem>
+      ))}
+    </ScrollView>
   );
 };
 
@@ -39,9 +64,25 @@ MealDetails.navigationOptions = ({ navigation }) => {
 export default MealDetails;
 
 const styles = StyleSheet.create({
-  screen: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
+  image: {
+    width: "100%",
+    height: 200,
+  },
+  details: {
+    flexDirection: "row",
+    padding: 15,
+    justifyContent: "space-around",
+  },
+  title: {
+    fontFamily: "open-sans-bold",
+    fontSize: 22,
+    textAlign: "center",
+  },
+  listItem: {
+    marginVertical: 10,
+    marginHorizontal: 20,
+    borderColor: "#ccc",
+    borderWidth: 1,
+    padding: 10,
   },
 });
