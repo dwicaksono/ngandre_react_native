@@ -12,7 +12,7 @@ const HeaderButtonApps = (props) => {
       {...props}
       IconComponent={Ionicons}
       iconSize={23}
-      color={Platform.OS === "ios" ? color.colorPrimary : color.colorSecondary}
+      color={Platform.OS === "ios" ? color.colorPrimary : color.colorThird}
     />
   );
 };
